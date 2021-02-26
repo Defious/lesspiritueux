@@ -8,9 +8,9 @@
       </div>
       <div class="card-footer">
         <% if @post.published? %>
-          <a href="#" class="btn btn-secondary btn-block">Non Publié</a>
+          <a href="#" class="btn btn-secondary btn-block" data-reflex='click->PublisherReflex#unpublish' data-post-id='<%= @post.id %>'>Non Publié</a>
         <% else %>
-          <a href="#" class="btn btn-dark btn-block">Publié</a>
+          <a href="#" class="btn btn-dark btn-block" data-reflex='click->PublisherReflex#unpublish' data-post-id='<%= @post.id %>'>Publié</a>
         <% end %>
       </div>
     </div>
