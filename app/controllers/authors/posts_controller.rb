@@ -30,6 +30,11 @@ module Authors
 
     # PATCH/PUT /posts/1
     def update
+
+      if @post.published == true
+        published_at = Time.now
+      end
+
       if @post.update(post_params)
         redirect_to edit_post_path(@post)
       else
@@ -51,7 +56,9 @@ module Authors
 
       # Only allow a trusted parameter "white list" through.
       def post_params
-        params.require(:post).permit(:title, :description, :header_image)
+        params.require(:post).permit(:title, :description, :header_image, :published)
       end
+
+
   end
 end

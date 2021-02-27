@@ -3,4 +3,6 @@ class Post < ApplicationRecord
   has_many :elements
 
   has_one_attached :header_image
+
+
 end
